@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulate Human Typing</title>
+</head>
+<body>
+  <input type="text" id="inputField">
+  <button onclick="simulateHumanTyping()">Simulate Typing</button>
+
+  <script>
+    function simulateHumanTyping() {
+      const inputField = document.getElementById('inputField');
+      const textToType = "Hello, this is a human typing.";
+      const typingSpeed = 100; // Adjust the typing speed (milliseconds per character)
+
+      simulateTyping(inputField, textToType, typingSpeed);
+    }
+
+    function simulateTyping(inputField, text, speed) {
+      let index = 0;
+
+      function typeNextCharacter() {
+        if (index < text.length) {
+          const character = text.charAt(index);
+          inputField.value += character;
+          index++;
+
+          // Simulate typing speed
+          setTimeout(typeNextCharacter, speed);
+        }
+      }
+
+      // Clear the input field before typing
+      inputField.value = '';
+
+      // Start simulating typing
+      typeNextCharacter();
+    }
+  </script>
+</body>
+</html>

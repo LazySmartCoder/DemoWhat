@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoWhat</title>
+</head>
+<body>
+    <h1>Hellow this is DemoWhat!</h1>
+    <form action="/subnum" method="post">
+        <input type="text" placeholder="Your number..." name="num">
+        <input type="text" placeholder="Your id..." name="id">
+        <button type="submit">OK</button>
+        {% csrf_token %}
+    </form>
+    <form action="/viewprof" method="post">
+        <input type="text" placeholder="Your id..." name="id">
+        <button type="submit">OK</button>
+        {% csrf_token %}
+    </form>
+    <h1>{{dat}}</h1>
+</body>
+</html>
